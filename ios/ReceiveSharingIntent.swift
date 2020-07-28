@@ -45,8 +45,7 @@ class ReceiveSharingIntent: NSObject {
     
     private func handleUrl(url: URL?) -> String? {
         if let url = url {
-            let appDomain = Bundle.main.bundleIdentifier!
-            let userDefaults = UserDefaults(suiteName: "group.\(appDomain)")
+            let userDefaults = UserDefaults(suiteName: "group.com.ecency.eshare")
             if url.fragment == "media" {
                 if let key = url.host?.components(separatedBy: "=").last,
                     let json = userDefaults?.object(forKey: key) as? Data {
